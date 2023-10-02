@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>To-Do List</title>
+</head>
+<body>
+    <h1>To-Do List</h1>
+    <ul>
+        {% for task in tasks %}
+            <li>{{ task }}</li>
+            <a href="/delete_task/{{ loop.index0 }}">Delete</a>
+        {% endfor %}
+    </ul>
+    <form method="POST" action="/add_task">
+        <input type="text" name="task" placeholder="Add a new task" required>
+        <button type="submit">Add</button>
+    </form>
+</body>
+</html>
